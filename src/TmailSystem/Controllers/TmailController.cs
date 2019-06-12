@@ -8,9 +8,13 @@ namespace TmailSystem.Controllers
 {
     public class TmailController : Controller
     {
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "Hello from Abdoll78!!";
+            if(DateTime.Today.DayOfWeek == DayOfWeek.Wednesday)
+            {
+                return Redirect("/");
+            }
+            return Content("Hello from abdoll78 :)");
         }
     }
 }
